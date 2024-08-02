@@ -1,10 +1,10 @@
-//Import Needed Clerk.js Sign-in Component
-import { SignIn } from "@clerk/nextjs";
+//Import Needed Clerk.js Sign-up Component
+import { SignUp } from "@clerk/nextjs";
 
 const SignInPage = () => {
     return ( 
         <main className="auth-page">
-            <SignIn />
+            <SignUp />
         </main>
      );
 }
