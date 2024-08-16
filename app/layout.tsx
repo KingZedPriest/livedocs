@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 
 //Import Needed Components
 import { ThemeProvider } from "@/components/theme-provider"
+import Provider from "./Provider";
 
 //Import Styles
 import "../styles/globals.css";
@@ -30,11 +31,13 @@ export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme: dark, variables: { colorPrimary: "#3371FF" , fontSize: "16px" },}}>
+    <ClerkProvider appearance={{ baseTheme: dark, variables: { colorPrimary: "#3371FF", fontSize: "16px" }, }}>
       <html lang="en" suppressHydrationWarning>
         <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+            <Provider>
+              {children}
+            </Provider>
           </ThemeProvider>
         </body>
       </html>
